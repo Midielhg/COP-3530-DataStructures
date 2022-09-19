@@ -20,5 +20,15 @@ public class Prog15_01
 
             s.pop();
         }
+
+        System.out.println("\n");
+
+        //push
+        s.push('A');
+
+        //peek
+        System.out.println("Item at the top: " + s.peek());
+
+
     }
 }
