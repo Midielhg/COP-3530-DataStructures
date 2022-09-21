@@ -33,4 +33,24 @@ public class Prog15_01
 
 
     }
+
+    //write a method print in the tester class that displays all of the objects in a stack in the order in which tehy were pushed onyo the stack 
+    //public void print(Stack s)
+    public void print(Stack s){
+        Stack temp = new Stack();
+    
+        //Copying the contect of s into temp
+        while(!s.isEmpty()){
+            temp.push(s.peek());
+            s.pop();
+        }
+    
+        //printing temp and inserging items back in s 
+        while(!temp.isEmpty()){
+            System.out.println(temp.peek() + " ");
+            s.push(temp.peek());
+            temp.pop();
+        }
+        System.out.println();
+    }
 }
