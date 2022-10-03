@@ -3,7 +3,11 @@
  */
 public class Prog17_04 {
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        //create an array from 1 to 100
+        int[] a = new int[1000];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = i + 1;
+        }
         printBackwards(a, a.length - 1);
     }
     public static void printBackwards(int[] a, int i) {
@@ -12,5 +16,4 @@ public class Prog17_04 {
             printBackwards(a, i - 1);
         }
     }
-    
 }
