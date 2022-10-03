@@ -66,6 +66,22 @@ public class Queue
 
     }
 
+    //add a print methof to the Queue class that prints the contents of the queue, and a clear method to produce an empty queue
+    public void print()
+    {
+        for(int i = 0; i < count; i++)
+        {
+            System.out.println(list[(front+i)%size]);
+        }
+    }
+
+    public void clear()
+    {
+        front = 0;
+        back = size - 1;
+        count = 0;
+    }
+
     public boolean isEmpty()
     {
         return count == 0;
