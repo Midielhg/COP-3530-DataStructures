@@ -2,7 +2,8 @@
 /**
  * Implements the node of a doubly linked list of integers.
  *
- * @author (add here name and Panther ID)
+ * @author  Midiel Henriquez PID 6352217
+ */
  */
 public class Node
 {
@@ -13,12 +14,15 @@ public class Node
 
     public Node()
     {
-        //TO IMPLEMENT
+        this.info = 0;
+        this.next = null;
+        this.prev = null;
     }
 
     public int getInfo()
     {
         return -1;  //DUMMY CODE; TO IMPLEMENT
+        
     }
 
     public Node getNext()
@@ -34,6 +38,7 @@ public class Node
     public void setInfo(int i)
     {
         //TO IMPLEMENT
+        
     }
 
     public void setNext(Node n)
