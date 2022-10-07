@@ -13,37 +13,39 @@ public class Node
 
     public Node()
     {
-        //TO IMPLEMENT
+        info = 0;
+        next = null;
+        prev = null;
     }
 
     public int getInfo()
     {
-        return -1;  //DUMMY CODE; TO IMPLEMENT
+        return info;
     }
 
     public Node getNext()
     {
-        return null;    //DUMMY CODE; TO IMPLEMENT
+        return next;
     }
 
     public Node getPrev()
     {
-        return null;    //DUMMY CODE; TO IMPLEMENT
+        return prev;
     }
 
     public void setInfo(int i)
     {
-        //TO IMPLEMENT
+        info = i;
     }
 
     public void setNext(Node n)
     {
-        //TO IMPLEMENT
+        next = n;
     }
 
     public void setPrev(Node p)
     {
-        //TO IMPLEMENT
+        prev = p;
     }
 
 }

@@ -29,12 +29,13 @@ public class Deque
      */
     public void addToBack(int x)
     {
-        Node newNode = new Node(x);
-        newNode.setPrev(back.getPrev());
-        newNode.setNext(back);
-        back.getPrev().setNext(newNode);
-        back.setPrev(newNode);
-        count++;            
+        Node n = new Node();
+        n.setInfo(x);
+        n.setNext(back);
+        n.setPrev(back.getPrev());
+        back.getPrev().setNext(n);
+        back.setPrev(n);
+        count++;
     }
 
     /**
@@ -45,11 +46,12 @@ public class Deque
      */
     public void addToFront(int x)
     {
-        Node newNode = new Node(x);
-        newNode.setPrev(front);
-        newNode.setNext(front.getNext());
-        front.getNext().setPrev(newNode);
-        front.setNext(newNode);
+        Node n = new Node();
+        n.setInfo(x);
+        n.setNext(front.getNext());
+        n.setPrev(front);
+        front.getNext().setPrev(n);
+        front.setNext(n);
         count++;
     }
 
@@ -63,7 +65,18 @@ public class Deque
      */
     public DequeItem getBack()
     {
-        return new DequeItem(); //DUMMY CODE; TO IMPLEMENT
+        DequeItem result = new DequeItem();
+        if (count == 0)
+        {
+            result.valid = false;
+            result.item = 0;
+        }
+        else
+        {
+            result.valid = true;
+            result.item = back.getPrev().getInfo();
+        }
+        return result;
     }
 
     /**
@@ -76,7 +89,18 @@ public class Deque
      */
     public DequeItem getFront()
     {
-        return new DequeItem(); //DUMMY CODE; TO IMPLEMENT
+        DequeItem result = new DequeItem();
+        if (count == 0)
+        {
+            result.valid = false;
+            result.item = 0;
+        }
+        else
+        {
+            result.valid = true;
+            result.item = front.getNext().getInfo();
+        }
+        return result;
     }
 
     /**
@@ -86,7 +110,7 @@ public class Deque
      */
     public boolean isEmpty()
     {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+        return count == 0;
     }
 
     /**
@@ -97,7 +121,17 @@ public class Deque
      */
     public boolean removeBack()
     {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+        if (count == 0)
+        {
+            return false;
+        }
+        else
+        {
+            back.getPrev().getPrev().setNext(back);
+            back.setPrev(back.getPrev().getPrev());
+            count--;
+            return true;
+        }
     }
 
     /**
@@ -109,7 +143,17 @@ public class Deque
      */
     public boolean removeFront()
     {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+        if (count == 0)
+        {
+            return false;
+        }
+        else
+        {
+            front.getNext().getNext().setPrev(front);
+            front.setNext(front.getNext().getNext());
+            count--;
+            return true;
+        }
     }
 
     /**
