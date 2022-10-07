@@ -3,20 +3,15 @@
  * The class Deque implements a double-ended queue with a doubly linked list.
  * The list uses a header and a trailer (dummy) nodes.
  *
- * @author Midiel Henriquez PID 6352217
+ * @author (add here name and Panther ID)
  */
 public class Deque
 {
-    //Default constructor. Sets this object as an empty deque.
-    public Deque()
-    {
-        this.header = new Node();
-        this.trailer = new Node();
-        this.header.next = this.trailer;
-        this.trailer.prev = this.header;
-        this.size = 0;
-    }
 
+    /**
+     * Default constructor. Sets this object as an empty deque.
+     *
+     */
     public Deque()
     {
         front = new Node();
@@ -35,11 +30,11 @@ public class Deque
     public void addToBack(int x)
     {
         Node newNode = new Node(x);
-        newNode.next = this.trailer;
-        newNode.prev = this.trailer.prev;
-        this.trailer.prev.next = newNode;
-        this.trailer.prev = newNode;
-        this.size++;
+        newNode.setPrev(back.getPrev());
+        newNode.setNext(back);
+        back.getPrev().setNext(newNode);
+        back.setPrev(newNode);
+        count++;            
     }
 
     /**
@@ -48,12 +43,14 @@ public class Deque
      *
      * @param x new element to be added to the deque.
      */
-    
-
-
     public void addToFront(int x)
     {
-        //TO IMPLEMENT
+        Node newNode = new Node(x);
+        newNode.setPrev(front);
+        newNode.setNext(front.getNext());
+        front.getNext().setPrev(newNode);
+        front.setNext(newNode);
+        count++;
     }
 
     /**
