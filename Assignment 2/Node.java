@@ -2,7 +2,7 @@
 /**
  * Implements the node of a doubly linked list of integers.
  *
- * @author (add here name and Panther ID)
+ * @author Midiel Henriquez PID:6352217
  */
 public class Node
 {

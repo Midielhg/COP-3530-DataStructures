@@ -3,7 +3,7 @@
  * The class Deque implements a double-ended queue with a doubly linked list.
  * The list uses a header and a trailer (dummy) nodes.
  *
- * @author (add here name and Panther ID)
+ * @author Midiel Henriquez PID:6352217
  */
 public class Deque
 {
