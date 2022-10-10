@@ -2,12 +2,11 @@
 
 public class Prog19_01 {
     public static void main(String[] args) {
-       
-        int[] list = { 5, 1, 4, 2, 8 };
+       //array list of 1000 randmo numbers
+        int[] list = new int[1000];
+        fillArray(list);
         bubbleSort(list);
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
-        }
+        printArray(list);
     }
 
     public static void bubbleSort(int[] list) {
@@ -26,7 +25,7 @@ public class Prog19_01 {
 
     public static void fillArray(int[] list) {
         for (int i = 0; i < list.length; i++) {
-            list[i] = (int)(Math.random() * 100);
+            list[i] = (int)(Math.random() * 1000);
         }
     }
 
