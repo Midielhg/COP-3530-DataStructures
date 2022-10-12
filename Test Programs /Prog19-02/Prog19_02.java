@@ -9,9 +9,6 @@ public class Prog19_02 {
         insertionSort(list);
         System.out.println("After sorting:");
         printArray(list);
-
-
-
     }   
     
     public static void insertionSort(int[] list){
