@@ -150,6 +150,19 @@ public class BinarySearchTree
 
     }
 
+    //Add a getMax method to the BinarySearchTree clas that finds the maximum value stored in the tree
+    public int getMax(){
+        return getMax(root.getLeftChild());
+    }
+
+    private int getMax(Node p){
+        if (p.getRightChild() == null){
+            return p.getInfo();
+        }else{
+            return getMax(p.getRightChild());
+        }
+    }
+
     
     //main
     public static void main(String[] args)
@@ -163,11 +176,12 @@ public class BinarySearchTree
         bst.display();
         System.out.println("It contains 5: " + bst.contains(5));
         System.out.println("It contains 9: " + bst.contains(9));
-        System.out.println("Min: " + bst.getMin());
+        System.out.println("Min value on the tree: " + bst.getMin());
         System.out.println(bst.toString());
         System.out.println("the height of the tree is: " + bst.getHeight());
         System.out.println("the number of elements in the tree is: " + bst.getCount());
         System.out.println("the number of occurence of 5 in the tree is: " + bst.count(5));
+        System.out.println("the maximum value in the tree is: " + bst.getMax());
         System.out.println();
     }
 }
