@@ -150,29 +150,25 @@ public class BinarySearchTree
 
     }
 
-    //Add a getMax method to the BinarySearchTree clas that finds the maximum value stored in the tree
+    //Add a getMax method to the BinarySearchTree clas that finds the maximum value stored in the tree (don't use recursion)
     public int getMax(){
-        return getMax(root.getLeftChild());
-    }
-
-    private int getMax(Node p){
-        if (p.getRightChild() == null){
-            return p.getInfo();
-        }else{
-            return getMax(p.getRightChild());
+        Node p = root.getLeftChild();
+        while (p.getRightChild() != null){
+            p = p.getRightChild();
         }
+        return p.getInfo();
     }
-
     
     //main
     public static void main(String[] args)
     {
+        //generate a random number of elements
         BinarySearchTree bst = new BinarySearchTree();
-        for (int i = 1; i < 100; i++)
-            bst.add((int) (Math.random() * 10));
-       
-        
+        for (int i = 1; i < 100; i++){
+            bst.add((int) (Math.random() * 100));
+        }
         System.out.println();
+        //display the tree
         bst.display();
         System.out.println("It contains 5: " + bst.contains(5));
         System.out.println("It contains 9: " + bst.contains(9));
