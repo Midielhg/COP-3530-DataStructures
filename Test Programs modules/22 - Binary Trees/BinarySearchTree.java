@@ -1,6 +1,7 @@
 /**
 * @author A. Hernandez
 * Data Structures and Algorithms
+* Modified by: Midiel Henriquez
 */
 public class BinarySearchTree
 {
@@ -130,18 +131,33 @@ public class BinarySearchTree
         }
     }
 
+    //Add a count(int x) method to the BinarySearchTree class that determines the numbers of occurence of x in the tree
+    public int count(int x){
+        return count(x, root.getLeftChild());
+    }
+
+    private int count(int x, Node p){
+        if (p == null){
+            return 0;
+        }else if (x == p.getInfo()){
+            return 1 + count(x, p.getRightChild());
+        }else if (x < p.getInfo()){
+            return count(x, p.getLeftChild());
+        }else{
+            return count(x, p.getRightChild());
+        }
+
+
+    }
+
     
     //main
     public static void main(String[] args)
     {
         BinarySearchTree bst = new BinarySearchTree();
-        bst.add(5);
-        bst.add(3);
-        bst.add(7);
-        bst.add(2);
-        bst.add(4);
-        bst.add(6);
-        bst.add(8);
+        for (int i = 1; i < 100; i++)
+            bst.add((int) (Math.random() * 10));
+       
         
         System.out.println();
         bst.display();
@@ -151,6 +167,7 @@ public class BinarySearchTree
         System.out.println(bst.toString());
         System.out.println("the height of the tree is: " + bst.getHeight());
         System.out.println("the number of elements in the tree is: " + bst.getCount());
+        System.out.println("the number of occurence of 5 in the tree is: " + bst.count(5));
         System.out.println();
     }
 }
