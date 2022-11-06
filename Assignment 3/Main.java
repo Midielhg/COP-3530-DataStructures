@@ -29,7 +29,7 @@ public class Main {
             int[] dataSource = new int[20000000];//create the data source
             SearchingAlgorithms.fillArray(dataSource, 40000000);//fill the data source with random numbers between 0 and 2*size of dataset
 
-            //Algorithm 1
+            //Algorithm 1 
             long startTime1 = System.nanoTime();//start time for algorithm 1
                 for (int i = 0; i < dataSource.length; i++) {//for loop to search the data source
                     if (SearchingAlgorithms.sequentialSearch(dataset, dataSource[i])) {//
