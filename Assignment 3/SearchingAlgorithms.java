@@ -1,3 +1,6 @@
+//Midiel Henriquez 
+//Panther id 6352217
+
 import java.util.Random;
 
 public class SearchingAlgorithms {//
