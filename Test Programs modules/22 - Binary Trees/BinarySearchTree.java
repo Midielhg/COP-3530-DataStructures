@@ -3,6 +3,10 @@
 * Data Structures and Algorithms
 * Modified by: Midiel Henriquez
 */
+
+//incude queue classs
+import java.util.Queue;
+
 public class BinarySearchTree
 {
     public BinarySearchTree()
@@ -153,12 +157,42 @@ public class BinarySearchTree
     //Add a getMax method to the BinarySearchTree clas that finds the maximum value stored in the tree (don't use recursion)
     public int getMax(){
         Node p = root.getLeftChild();
+
         while (p.getRightChild() != null){
             p = p.getRightChild();
         }
         return p.getInfo();
     }
+
+    // //Add a printLevels method to the BinarySearchTree clas that prints the tree traversed by levels using a queue
+    // public void printLevels(){
+    //     Queue q = new Queue();
+
+    //     if (root.getLeftChild() != null){
+    //         q.enqueue(root.getLeftChild());
+
+    //         while(!q.isEmpty()){
+    //             Node p = q.getFront();
+    //             q.dequeue();
+
+    //             System.out.println(p.getInfo() + " " );
+    //             if (p.getLeftChild() != null){
+    //                 q.enqueue(p.getLeftChild());
+    //             }
+    //             if(p.getRightChild() != null){
+    //                 q.enqueue(p.getRightChild());
+    //             }
+    //             System.out.println();
+    //         }
+    //     }
+
+    // }
+
+
+    //
+
     
+
     //main
     public static void main(String[] args)
     {
@@ -178,6 +212,7 @@ public class BinarySearchTree
         System.out.println("the number of elements in the tree is: " + bst.getCount());
         System.out.println("the number of occurence of 5 in the tree is: " + bst.count(5));
         System.out.println("the maximum value in the tree is: " + bst.getMax());
+        // System.out.println("the tree traversed by levels using a queue is: " + bst.printLevels());
         System.out.println();
     }
 }
