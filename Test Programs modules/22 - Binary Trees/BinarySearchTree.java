@@ -4,8 +4,7 @@
 * Modified by: Midiel Henriquez
 */
 
-//incude queue classs
-import java.util.Queue;
+
 
 public class BinarySearchTree
 {
@@ -100,15 +99,6 @@ public class BinarySearchTree
             return getMin(p.getLeftChild());
     }
 
-    private String toString(Node p)
-    {
-        if (p == null){
-            return "";
-        }else{
-            return toString(p.getLeftChild()) + " " + p.getInfo() + " " + toString(p.getRightChild());
-        }
-
-    }
     //add a getHight to be BinarySearchTree class to cpmpute the height of the tree
     public int getHeight(){
         return getHeight(root.getLeftChild());
