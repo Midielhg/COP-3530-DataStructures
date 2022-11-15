@@ -1,5 +1,4 @@
 
-
 /**
  * The class LinkedList implements the symbol table.
  *
@@ -14,11 +13,11 @@ public class SymbolTable
     /**
      * Default constructor. Sets this symbol table as an empty one.
      */
-    public SymbolTable(){
+    public SymbolTable()
+    {   
         table = new LinkedList[tableSize];
-        for (int i = 0; i < tableSize; i++){
+        for (int i=0; i<tableSize; i++)
             table[i] = new LinkedList();
-        }
     }
 
     /**
@@ -50,7 +49,8 @@ public class SymbolTable
      *
      * @param e element to be added to this hash table
      */
-    public void add(ElementType e){
+    public void add(ElementType e)
+    {   
         int hashVal = hash(e.identifier);
         table[hashVal].add(e);
     }
@@ -60,7 +60,8 @@ public class SymbolTable
      *
      * @param key key value of node to be removed
      */
-    public void remove(String key){
+    public void remove(String key)
+    {   
         int hashVal = hash(key);
         table[hashVal].remove(key);
     }
@@ -71,7 +72,8 @@ public class SymbolTable
      * @param key key value to be searched
      * @return true if search is successful, false otherwise
      */
-    public boolean search(String key){
+    public boolean search(String key)
+    {   
         int hashVal = hash(key);
         return table[hashVal].search(key);
     }
