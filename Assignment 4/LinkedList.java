@@ -13,8 +13,8 @@ public class LinkedList{
      * Default constructor. Sets this object as an empty list.
      *
      */
-    public LinkedList()
-    {
+    public LinkedList(){
+        first = new Node();
     }
 
     /**
@@ -22,8 +22,11 @@ public class LinkedList{
      *
      * @param x element to be added to the list
      */
-    public void add(ElementType x)
-    {
+    public void add(ElementType x){
+        Node newNode = new Node();
+        newNode.setInfo(x);
+        newNode.setNext(first.getNext());
+        first.setNext(newNode);
     }
 
     /**
@@ -31,8 +34,8 @@ public class LinkedList{
      *
      * @return true if list contains no elements, false otherwise.
      */
-    public boolean isEmpty()
-    {
+    public boolean isEmpty(){
+        return false;
     }
 
     /**
@@ -40,8 +43,17 @@ public class LinkedList{
      *
      * @param x element to be removed
      */
-    public void remove(String x)
-    {
+    public void remove(String x){   
+        Node current = first.getNext();
+        Node previous = first;
+        while (current != null){
+            if (current.getInfo().identifier.equals(x)){
+                previous.setNext(current.getNext());
+                return;
+            }
+            previous = current;
+            current = current.getNext();
+        }
     }
 
     /**
@@ -50,8 +62,8 @@ public class LinkedList{
      * @param x element to be searched
      * @return true if x is in the list, false otherwise
      */
-    public boolean search(String x)
-    {
+    public boolean search(String x){
+        return false;
     }
 
     /**

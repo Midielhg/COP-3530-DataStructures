@@ -13,23 +13,24 @@ public class Node
     /**
      * Default constructor. Creates a default node object.
      */
-    public Node()
-    {
+    public Node(){
+        info = null;
+        next = null;
     }
 
-    public void setInfo(ElementType x)
-    {
+    public ElementType getInfo(){
+        return info;
     }
 
-    public void setNext(Node l)
-    {
+    public Node getNext(){  
+        return next;
     }
 
-    public ElementType getInfo()
-    {
+    public void setInfo(ElementType x){
+        info = x;
     }
 
-    public Node getNext()
-    {
+    public void setNext(Node l){
+        next = l;
     }
 }
