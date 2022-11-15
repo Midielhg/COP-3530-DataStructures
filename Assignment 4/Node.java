@@ -2,7 +2,7 @@
 /**
  * Implements the node of a singly linked list of ElementType.
  *
- * @author (add here full name(s), Panther ID(s), and class section(s))
+ * @author Midiel Henriquez     PID:6352217     Class Section: U01
  */
 public class Node
 {

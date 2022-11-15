@@ -3,7 +3,7 @@
  * The class LinkedList implements a singly linked list of ElementType
  * The list uses a header (dummy) node.
  *
- * @author (add here full name(s), Panther ID(s), and class section(s))
+ * @author Midiel Henriquez     PID:6352217     Class Section: U01
  */
 public class LinkedList{
 

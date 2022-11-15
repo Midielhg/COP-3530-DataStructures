@@ -2,7 +2,7 @@
 /**
  * The class LinkedList implements the symbol table.
  *
- * @author (add here full name(s), Panther ID(s), and class section(s))
+ * @author Midiel Henriquez     PID:6352217     Class Section: U01
 */
 public class SymbolTable
 {
