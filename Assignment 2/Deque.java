@@ -14,11 +14,7 @@ public class Deque
      */
     public Deque()
     {
-        front = new Node();
-        back = new Node();
-        front.setNext(back);
-        back.setPrev(front);
-        count = 0;
+        
     }
 
     /**
@@ -29,13 +25,7 @@ public class Deque
      */
     public void addToBack(int x)
     {
-        Node n = new Node();
-        n.setInfo(x);
-        n.setNext(back);
-        n.setPrev(back.getPrev());
-        back.getPrev().setNext(n);
-        back.setPrev(n);
-        count++;
+     
     }
 
     /**
@@ -46,13 +36,7 @@ public class Deque
      */
     public void addToFront(int x)
     {
-        Node n = new Node();
-        n.setInfo(x);
-        n.setNext(front.getNext());
-        n.setPrev(front);
-        front.getNext().setPrev(n);
-        front.setNext(n);
-        count++;
+    
     }
 
     /**
@@ -65,18 +49,7 @@ public class Deque
      */
     public DequeItem getBack()
     {
-        DequeItem result = new DequeItem();
-        if (count == 0)
-        {
-            result.valid = false;
-            result.item = 0;
-        }
-        else
-        {
-            result.valid = true;
-            result.item = back.getPrev().getInfo();
-        }
-        return result;
+     
     }
 
     /**
@@ -89,18 +62,7 @@ public class Deque
      */
     public DequeItem getFront()
     {
-        DequeItem result = new DequeItem();
-        if (count == 0)
-        {
-            result.valid = false;
-            result.item = 0;
-        }
-        else
-        {
-            result.valid = true;
-            result.item = front.getNext().getInfo();
-        }
-        return result;
+      
     }
 
     /**
